@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  OverviewVC.h
 //  CalculateApplication
 //
 //  Created by Paul van der Laan on 24-05-15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
+@interface OverviewVC : UIViewController
 
 @end
-

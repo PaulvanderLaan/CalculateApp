@@ -1,18 +1,18 @@
 //
-//  SecondViewController.m
+//  FirstViewController.m
 //  CalculateApplication
 //
 //  Created by Paul van der Laan on 24-05-15.
 //  Copyright (c) 2015 -. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "HomeVC.h"
 
-@interface SecondViewController ()
+@interface HomeVC ()
 
 @end
 
-@implementation SecondViewController
+@implementation HomeVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
