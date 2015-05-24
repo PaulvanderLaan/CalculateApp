@@ -17,8 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-#warning xcode unable to commit to Github
-#warning hi
+
 }
 
 - (void)didReceiveMemoryWarning {
