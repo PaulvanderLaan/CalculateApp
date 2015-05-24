@@ -11,7 +11,11 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property BOOL divide;
+@property BOOL multiply;
+@property BOOL deduct;
+@property BOOL sumUp;
+@property int minimumType;
 
 @end
 

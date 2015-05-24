@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AppDelegate;
 
-@interface CalculatePracticeVC : UIViewController
-
+@interface CalculatePracticeVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, strong) AppDelegate *appDelegate;
+@property (nonatomic, retain) NSMutableArray *typeOptions;
 
 @end
 

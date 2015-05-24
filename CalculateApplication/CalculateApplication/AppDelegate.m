@@ -13,7 +13,8 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize divide, sumUp, deduct, multiply;
+@synthesize minimumType;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
