@@ -15,7 +15,6 @@
 @property BOOL multiply;
 @property BOOL deduct;
 @property BOOL sumUp;
-@property int minimumType;
 
 @end
 

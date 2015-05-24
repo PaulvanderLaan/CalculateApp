@@ -54,22 +54,20 @@ typedef enum _type_option_t {
 #pragma delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch ([indexPath row]) {
-        case TYPE_OPTION_MULTIPLY   : if ([appDelegate multiply] == YES) { [appDelegate setMultiply:NO];
-            [appDelegate setMinimumType:[appDelegate minimumType]+1];}
-        else {
-            [appDelegate setMultiply:YES]; [appDelegate setMinimumType:[appDelegate minimumType]+1];
-        }
+        case TYPE_OPTION_MULTIPLY   : if ([appDelegate multiply] == YES) { [appDelegate setMultiply:NO]; } else { [appDelegate setMultiply:YES];}
             break;
         case TYPE_OPTION_DEDUCT     : if ([appDelegate deduct] == YES)   { [appDelegate setDeduct:NO];   } else { [appDelegate setDeduct:YES];}
-            [appDelegate setMinimumType:[appDelegate minimumType]+1];
             break;
         case TYPE_OPTION_SUMUP      : if ([appDelegate sumUp] == YES)    { [appDelegate setSumUp:NO];    } else { [appDelegate setSumUp:YES];}
-            [appDelegate setMinimumType:[appDelegate minimumType]+1];
             break;
         case TYPE_OPTION_DIVIDE     : if ([appDelegate divide] == YES)   { [appDelegate setDivide:NO];   } else { [appDelegate setDivide:YES];}
-            [appDelegate setMinimumType:[appDelegate minimumType]+1];
             break;
-        case TYPE_OPTION_DONE       : if ([appDelegate minimumType] > 0) { NSLog(@"going to next view");};
+        case TYPE_OPTION_DONE       : if ([appDelegate multiply] == YES ||
+                                          [appDelegate deduct] == YES ||
+                                          [appDelegate sumUp] == YES ||
+                                          [appDelegate divide] == YES) {
+            NSLog(@"going to next view");
+        };
             break;
 
         default: exit(EXIT_FAILURE); break;
@@ -97,6 +95,7 @@ typedef enum _type_option_t {
     NSDictionary *typeOption = [typeOptions objectAtIndex:[indexPath row]];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     [[cell textLabel] setText:[typeOption objectForKey:@"option"]];
+    //[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     return cell;
 }
 
